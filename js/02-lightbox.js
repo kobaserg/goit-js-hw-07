@@ -19,4 +19,7 @@ const lightbox = new SimpleLightbox('.gallery a', {
   captionSelector: 'img',
   captionsData: 'alt',
   captionDelay: 250,
+  widthRatio: 0.6,
+  heightRatio: 0.9,
+  scrollZoomFactor: 0.1,
 });
