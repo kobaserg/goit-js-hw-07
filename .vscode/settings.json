@@ -20,5 +20,6 @@
     "> 1%",
     "last 2 versions"
   ],
-  "svg.preview.background": "black"
+  "svg.preview.background": "black",
+  "liveServer.settings.port": 5501
 }
