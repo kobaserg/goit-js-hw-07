@@ -24,16 +24,18 @@ gallery.addEventListener('click', onOpemModal);
 
 function onOpemModal(event) {
   event.preventDefault();
-  const instance = basicLightbox.create(`<img src="${event.target.dataset.source}" width="1200">`);
+  const instance = basicLightbox.create(`<img src="${event.target.dataset.source}" width="1200">`, {
+    onShow: instance => {
+      document.addEventListener('keydown', onCloseModalEsc);
+      function onCloseModalEsc(event) {
+        if (event.code !== 'Escape') {
+          return;
+        }
+        instance.close();
+        document.removeEventListener('keydown', onCloseModalEsc);
+      }
+    },
+  });
 
   instance.show();
-
-  gallery.addEventListener('keydown', onCloseModalEsc);
-
-  function onCloseModalEsc(event) {
-    if (event.code !== 'Escape') {
-      return;
-    }
-    instance.close();
-  }
 }
