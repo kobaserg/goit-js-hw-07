@@ -36,6 +36,6 @@ function onOpemModal(event) {
       }
     },
   });
-
+  console.log(instance);
   instance.show();
 }
